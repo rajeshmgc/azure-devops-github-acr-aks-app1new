@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: aksngnixapp1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aksngnixapp1
+  template:
+    metadata:
+      labels:
+        app: aksngnixapp1 
+    spec:
+      containers:
+        - name: aksngnixapp1 
+          image: aksdevopsmgcacr.azurecr.io/aksngnixapp1
+          ports:
+          - containerPort: 80
